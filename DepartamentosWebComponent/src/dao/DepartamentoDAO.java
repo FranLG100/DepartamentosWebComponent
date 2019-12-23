@@ -13,11 +13,6 @@ import modelo.Conexion;
 import modelo.Departamento;
 
  
-/*
- * @autor: Elivar Largo
- * @web: www.ecodeup.com
- */
- 
 public class DepartamentoDAO {
 	private Conexion con;
 	private Connection connection;
@@ -28,24 +23,22 @@ public class DepartamentoDAO {
 	}
  
 	// insertar artículo
-	/*public boolean insertar(Departamento departamento) throws SQLException {
-		String sql = "INSERT INTO articulos (id, codigo, nombre, descripcion, existencia, precio) VALUES (?, ?, ?,?,?,?)";
-		System.out.println(departamento.getDescripcion());
+	public boolean insertar(Departamento departamento) throws SQLException {
+		String sql = "INSERT INTO departamentos (dnombre, loc) VALUES (?,?)";
+		//System.out.println(departamento.getDescripcion());
 		con.conectar();
 		connection = con.getJdbcConnection();
 		PreparedStatement statement = connection.prepareStatement(sql);
-		statement.setString(1, null);
-		statement.setString(2, departamento.getCodigo());
-		statement.setString(3, departamento.getNombre());
-		statement.setString(4, departamento.getDescripcion());
-		statement.setDouble(5, departamento.getExistencia());
-		statement.setDouble(6, departamento.getPrecio());
+		//statement.setString(1, null);
+		statement.setString(1, departamento.getDnombre());
+		statement.setString(2, departamento.getLoc());
+
  
 		boolean rowInserted = statement.executeUpdate() > 0;
 		statement.close();
 		con.desconectar();
 		return rowInserted;
-	}*/
+	}
  
 	// listar todos los productos
 	public List<Departamento> listarDepartamentos() throws SQLException {

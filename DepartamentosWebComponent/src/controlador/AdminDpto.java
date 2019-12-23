@@ -69,7 +69,7 @@ public class AdminDpto extends HttpServlet {
 				break;
 			case "register":
 				System.out.println("entro");
-				//registrar(request, response);
+				registrar(request, response);
 				break;
 			case "mostrar":
 				mostrar(request, response);
@@ -109,13 +109,13 @@ public class AdminDpto extends HttpServlet {
 		dispatcher.forward(request, response);
 	}
  
-	/*private void registrar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
-		Articulo articulo = new Articulo(0, request.getParameter("codigo"), request.getParameter("nombre"), request.getParameter("descripcion"), Double.parseDouble(request.getParameter("cantidad")), Double.parseDouble(request.getParameter("precio")));
-		dptoDAO.insertar(articulo);
+	private void registrar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
+		Departamento dpto = new Departamento(0, request.getParameter("nombre"), request.getParameter("localidad"));
+		dptoDAO.insertar(dpto);
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
 		dispatcher.forward(request, response);
-	}*/
+	}
 	
 	private void nuevo(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/vista/register.jsp");

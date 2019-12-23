@@ -8,29 +8,16 @@
 </head>
 <body>
 	<h1>Registrar Artículo</h1>
-	<form action="adminArticulo?action=register" method="post">
+	<form action="adminDpto?action=register" method="post">
 		<table border="1" align="center">
-		<tr>
-			<td>Código:</a></td>		
-			<td><input type="text" name="codigo"/></td>	
-		</tr>
 		<tr>
 			<td>Nombre:</a></td>		
 			<td><input type="text" name="nombre"/></td>	
 		</tr>
 		<tr>
-			<td>Descripción:</a></td>		
-			<td><input type="text" name="descripcion"/></td>	
+			<td>Localidad:</a></td>		
+			<td><input type="text" name="localidad"/></td>	
 		</tr>
-		<tr>
-			<td>Cantidad:</a></td>		
-			<td><input type="text" name="cantidad"/></td>	
-		</tr>
-		<tr>
-			<td>Precio:</a></td>		
-			<td><input type="text" name="precio"/></td>	
-		</tr>		
-		
 	</table>
 	<br>
 	<table border="0" align="center">
