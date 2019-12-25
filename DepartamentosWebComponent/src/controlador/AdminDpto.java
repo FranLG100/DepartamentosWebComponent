@@ -75,13 +75,13 @@ public class AdminDpto extends HttpServlet {
 				mostrar(request, response);
 				break;
 			case "showedit":
-				//showEditar(request, response);
+				showEditar(request, response);
 				break;	
 			case "editar":
-				//editar(request, response);
+				editar(request, response);
 				break;
 			case "eliminar":
-				//eliminar(request, response);
+				eliminar(request, response);
 				break;
 			default:
 				break;
@@ -130,25 +130,27 @@ public class AdminDpto extends HttpServlet {
 		dispatcher.forward(request, response);
 	}	
 	
-	/*private void showEditar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
-		Articulo articulo = dptoDAO.obtenerPorId(Integer.parseInt(request.getParameter("id")));
-		request.setAttribute("articulo", articulo);
+	private void showEditar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
+		Departamento dpto = dptoDAO.obtenerPorId(Integer.parseInt(request.getParameter("id")));
+		request.setAttribute("dpto", dpto);
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/vista/editar.jsp");
 		dispatcher.forward(request, response);
 	}
 	
 	private void editar(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException{
-		Articulo articulo = new Articulo(Integer.parseInt(request.getParameter("id")), request.getParameter("codigo"), request.getParameter("nombre"), request.getParameter("descripcion"), Double.parseDouble(request.getParameter("existencia")), Double.parseDouble(request.getParameter("precio")));
-		dptoDAO.actualizar(articulo);
+		Departamento dpto = new Departamento(Integer.parseInt(request.getParameter("id")), request.getParameter("nombre"), request.getParameter("localidad"));
+		System.out.println(dpto.getLoc());
+		dptoDAO.actualizar(dpto);
 		index(request, response);
 	}
 	
 	private void eliminar(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException{
-		Articulo articulo = dptoDAO.obtenerPorId(Integer.parseInt(request.getParameter("id")));
-		dptoDAO.eliminar(articulo);
+		Departamento dpto = dptoDAO.obtenerPorId(Integer.parseInt(request.getParameter("id")));
+		System.out.println(dpto.getDnombre());
+		dptoDAO.eliminar(dpto);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
 		dispatcher.forward(request, response);
 		
-	}*/
+	}
 }

@@ -29,7 +29,7 @@
 				<td><c:out value="${dpto.dnombre}"/></td>
 				<td><c:out value="${dpto.loc}"/></td>
 				<td><a href="adminDpto?action=showedit&id=<c:out value="${dpto.deptno}" />">Editar</a></td>
-				<td><a href="adminDpto?action=eliminar&id=<c:out value="${dpto.deptno}"/>">Eliminar</a> </td>				
+				<td><a href="adminDpto?action=eliminar&id=<c:out value="${dpto.deptno}"/>" name="id">Eliminar</a> </td>				
 			</tr>
 		</c:forEach>
 	</table>

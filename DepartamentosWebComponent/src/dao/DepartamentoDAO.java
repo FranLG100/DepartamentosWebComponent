@@ -62,10 +62,10 @@ public class DepartamentoDAO {
 	}
  
 	// obtener por id
-	/*public Articulo obtenerPorId(int id) throws SQLException {
-		Articulo articulo = null;
- 
-		String sql = "SELECT * FROM articulos WHERE id= ? ";
+	public Departamento obtenerPorId(int id) throws SQLException {
+		Departamento dpto = null;
+		System.out.println("ID DE DEPARTAMENTO: "+id);
+		String sql = "SELECT * FROM departamentos WHERE dept_no= ? ";
 		con.conectar();
 		connection = con.getJdbcConnection();
 		PreparedStatement statement = connection.prepareStatement(sql);
@@ -73,30 +73,26 @@ public class DepartamentoDAO {
  
 		ResultSet res = statement.executeQuery();
 		if (res.next()) {
-			articulo = new Articulo(res.getInt("id"), res.getString("codigo"), res.getString("nombre"),
-					res.getString("descripcion"), res.getDouble("existencia"), res.getDouble("precio"));
+			dpto = new Departamento(res.getInt(1), res.getString(2), res.getString(3));
+			
 		}
 		res.close();
 		con.desconectar();
  
-		return articulo;
+		return dpto;
 	}
  
 	// actualizar
-	public boolean actualizar(Articulo articulo) throws SQLException {
+	public boolean actualizar(Departamento dpto) throws SQLException {
 		boolean rowActualizar = false;
-		String sql = "UPDATE articulos SET codigo=?,nombre=?,descripcion=?,existencia=?, precio=? WHERE id=?";
+		String sql = "UPDATE departamentos SET dnombre=?,loc=? WHERE dept_no=?";
 		con.conectar();
 		connection = con.getJdbcConnection();
 		PreparedStatement statement = connection.prepareStatement(sql);
-		statement.setString(1, articulo.getCodigo());
-		statement.setString(2, articulo.getNombre());
-		statement.setString(3, articulo.getDescripcion());
-		statement.setDouble(4, articulo.getExistencia());
-		System.out.println(articulo.getPrecio());
-		statement.setDouble(5, articulo.getPrecio());
-		statement.setInt(6, articulo.getId());
- 
+		statement.setString(1, dpto.getDnombre());
+		statement.setString(2, dpto.getLoc());
+		statement.setInt(3, dpto.getDeptno());
+		System.out.println("Actualizado");
 		rowActualizar = statement.executeUpdate() > 0;
 		statement.close();
 		con.desconectar();
@@ -104,19 +100,19 @@ public class DepartamentoDAO {
 	}
 	
 	//eliminar
-	public boolean eliminar(Articulo articulo) throws SQLException {
+	public boolean eliminar(Departamento dpto) throws SQLException {
 		boolean rowEliminar = false;
-		String sql = "DELETE FROM articulos WHERE ID=?";
+		String sql = "DELETE FROM departamentos WHERE dept_no=?";
 		con.conectar();
 		connection = con.getJdbcConnection();
 		PreparedStatement statement = connection.prepareStatement(sql);
-		statement.setInt(1, articulo.getId());
+		statement.setInt(1, dpto.getDeptno());
  
 		rowEliminar = statement.executeUpdate() > 0;
 		statement.close();
 		con.desconectar();
- 
+		System.out.println("Departamento eliminado");
 		return rowEliminar;
 	}
-	*/
+	
 }

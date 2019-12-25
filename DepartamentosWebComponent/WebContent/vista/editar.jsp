@@ -5,36 +5,23 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Actualizar Artículo</title>
+<title>Actualizar Departamento</title>
 </head>
 <body>
-<h1>Actualizar Artículo</h1>
-	<form action="adminArticulo?action=editar" method="post" >
+<h1>Actualizar Departamento</h1>
+	<form action="adminDpto?action=editar" method="post" >
 		<table>
 			<tr>
 				<td><label>Id</label></td>
-				<td><input type="text" name="id" value="<c:out value="${articulo.id}"></c:out>" ></td>
-			</tr>
-			<tr>
-				<td><label>Código</label></td>
-				<td><input type="text" name="codigo" value='<c:out value="${articulo.codigo}"></c:out>' ></td>
+				<td><input type="text" name="id" value="<c:out value="${dpto.deptno}"></c:out>" ></td>
 			</tr>
 			<tr>
 				<td><label>Nombre</label></td>
-				<td><input type="text" name="nombre" value='<c:out value="${articulo.nombre}"></c:out>' ></td>
+				<td><input type="text" name="nombre" value='<c:out value="${dpto.dnombre}"></c:out>' ></td>
 			</tr>
 			<tr>
-				<td><label>Descripción</label></td>
-				<td><input type="text" name="descripcion" value='<c:out value="${articulo.descripcion}"></c:out>' ></td>
-			</tr>
-			<tr>
-				<td><label>Existencia</label></td>
-				<td><input type="text" name="existencia" value='<c:out value="${articulo.existencia }"></c:out>' ></td>
-			</tr>
-			
-			<tr>
-				<td><label>Precio</label></td>
-				<td><input type="text" name="precio" value='<c:out value="${articulo.precio }"></c:out>' ></td>
+				<td><label>Localidad</label></td>
+				<td><input type="text" name="localidad" value='<c:out value="${dpto.loc}"></c:out>' ></td>
 			</tr>
 		</table>
 	
