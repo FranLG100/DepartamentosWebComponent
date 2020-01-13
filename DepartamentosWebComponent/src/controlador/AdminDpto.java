@@ -25,7 +25,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class AdminArticulo
  */
-@WebServlet("/adminDpto")
+@WebServlet("/")
 public class AdminDpto extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	DepartamentoDAO dptoDAO;

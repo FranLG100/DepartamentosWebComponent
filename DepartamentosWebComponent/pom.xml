@@ -31,6 +31,11 @@
         <artifactId>mysql-connector-java</artifactId>
         <version>5.1.30</version>
     </dependency>
+    <dependency>
+        <groupId>com.libreriadao</groupId>
+        <artifactId>libreriadao</artifactId>
+        <version>1.0</version>
+    </dependency>
 	</dependencies>
 	
   
