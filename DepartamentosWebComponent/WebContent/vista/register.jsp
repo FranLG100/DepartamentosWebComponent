@@ -4,10 +4,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Registrar Artículo</title>
+<title>Registrar Departamento</title>
 </head>
 <body>
-	<h1>Registrar Artículo</h1>
+	<h1>Registrar Departamento</h1>
 	<form action="adminDpto?action=register" method="post">
 		<table border="1" align="center">
 		<tr>
